@@ -7,7 +7,16 @@ A simple yet complete web development project combining HTML, CSS, JavaScript, a
 ## 📁 Project Structure
 
 
-back-to-basic-web-dev/ ├── index.html          # Main landing page ├── style.css           # CSS styling ├── script.js           # JavaScript for interactivity ├── todolist.html       # To-do list UI ├── todo.py             # Python backend logic ├── todos.db            # SQLite database ├── requirements.txt    # Python dependencies └── README.md           # Project documentation
+back-to-basic-web-dev/ 
+├── index.html          
+# Main landing page ├── style.css          
+# CSS styling ├── script.js          
+# JavaScript for interactivity ├── todolist.html       
+# To-do list UI ├── todo.py             
+# Python backend logic ├── todos.db            
+# SQLite database ├── requirements.txt    
+# Python dependencies └── README.md           
+# Project documentation
 
 ---
 
@@ -45,21 +54,11 @@ python todo.py
 - Open the frontend
 - Launch todolist.html in your browser.
 
-🧰 Tech Stack
-|  |  | 
-|  |  | 
-|  |  | 
-|  |  | 
-
-
-
 💡 Inspiration
 This project is part of a personal journey to revisit the basics of web development and build a strong foundation for more advanced full-stack applications.
 
 Made with ❤️ by Lakshya
 <img width="1920" height="1089" alt="image" src="https://github.com/user-attachments/assets/923f3d6d-22ab-4aca-9f2f-d954d4aefc70" />
 
-
-
 
             
