@@ -1,0 +1,253 @@
+:root {
+    --primary-color: #60a5fa;
+    --text-color: #4b5563;
+    --bg-color: rgba(255, 255, 255, 0.95);
+    --bg-gradient: linear-gradient(135deg, #f2fdf9 0%, #4893c6 50%, #44f378 100%);
+    --border-color: rgba(255, 255, 255, 0.8);
+    --danger-color: #f87171;
+    --success-color: #34d399;
+    --shadow-color: rgba(147, 197, 253, 0.15);
+}
+
+[data-theme="dark"] {
+    --text-color: #ecf0f1;
+    --bg-color: rgba(28, 31, 42, 0.98);
+    --bg-gradient: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --shadow-color: rgba(0, 0, 0, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    transition: background 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 90%;
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px var(--shadow-color);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    margin: 2rem;
+    transition: all 0.3s ease;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 0;
+}
+
+h1 {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+/* Add Todo Section */
+.add-todo {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Form Controls */
+input[type="date"],
+select,
+button {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+#add-btn {
+    background: linear-gradient(135deg, var(--primary-color), #2574d0);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+#add-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+/* Controls */
+.todo-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.filter-buttons button {
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.filter-buttons button.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Todo List */
+#todo-list {
+    list-style: none;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background: var(--bg-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.todo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.todo-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+/* Priority Indicator */
+.priority-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.priority-high { background: var(--danger-color); }
+.priority-medium { background: #ffc107; }
+.priority-low { background: var(--success-color); }
+
+/* Todo Text */
+.text {
+    flex: 1;
+    padding: 2px 4px;
+}
+
+.text:focus {
+    outline: 1px solid var(--primary-color);
+    background: var(--bg-color);
+    border-radius: 2px;
+}
+
+/* Due Date */
+.due-date {
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.due-date.overdue {
+    color: var(--danger-color);
+}
+
+/* Delete Button */
+.delete-btn {
+    background: transparent;
+    color: var(--danger-color);
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+/* Completed State */
+.completed .text {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Theme Toggle */
+#theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    padding: 4px 8px;
+}
+
+/* Drag and Drop */
+.todo-item.dragging {
+    opacity: 0.5;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .add-todo {
+        flex-direction: column;
+    }
+    
+    #todo-input {
+        width: 100%;
+    }
+    
+    .todo-controls {
+        flex-direction: column;
+    }
+    
+    .filter-buttons {
+        width: 100%;
+    }
+    
+    .filter-buttons button {
+        flex: 1;
+    }
+    
+    #sort-by {
+        width: 100%;
+    }
+}
